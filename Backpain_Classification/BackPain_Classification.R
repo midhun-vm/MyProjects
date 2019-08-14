@@ -1,4 +1,4 @@
-load("E:/Study/Sem 2/Statistical ML/project/backpain.RData")
+load("backpain.RData")
 set.seed(1000)
 library(rpart)
 library(nnet)
