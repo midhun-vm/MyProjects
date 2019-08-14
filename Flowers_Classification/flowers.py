@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[5]:
-
 
 # Import the necessary libraries
 
@@ -21,10 +16,6 @@ import os
 import random
 from sklearn.model_selection import train_test_split
 
-
-# In[53]:
-
-
 #dl libraraies
 import numpy as np
 from os import listdir
@@ -41,29 +32,15 @@ from keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 import random as rn
 
 
-# In[ ]:
-
-
-
-
-
-# In[6]:
-
-
 # Set the path of the input folder 
 
-data = "E:/Projects/Flowers"
+data = 
 
 # List out the directories inside the main input folder
 
 folders = os.listdir(data)
 
 print(folders)
-
-
-# In[27]:
-
-
 # Import the images and resize them to a 128*128 size
 # Also generate the corresponding labels
 
@@ -95,20 +72,10 @@ train = np.array(train_images)
 
 train.shape
 
-
-# In[29]:
-
-
-img = cv2.imread('E:/Projects/Flowers/daisy/5547758_eea9edfd54_n.jpg')
-
-
-# In[30]:
+img = cv2.imread('')
 
 
 img.shape
-
-
-# In[22]:
 
 
 cv2.imshow('image',img)
@@ -116,46 +83,20 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-# In[51]:
-
-
 label_dummies = pandas.get_dummies(train_labels)
 
 labels =  label_dummies.values.argmax(1)
 #pandas.unique(train_labels)
 pandas.unique(labels)
-
-
-# In[32]:
-
-
 union_list = list(zip(train, labels))
 random.shuffle(union_list)
-
-
-# In[33]:
-
-
 train,labels = zip(*union_list)
-
-
-# In[34]:
-
 
 # Convert the shuffled list to numpy array type
 
 train = np.array(train)
 labels = np.array(labels)
-
-
-# In[35]:
-
-
 x_train,x_test,y_train,y_test=train_test_split(train,labels,test_size=0.25,random_state=42)
-
-
-# In[36]:
-
 
 train[0].shape
 
@@ -167,14 +108,7 @@ cv2.imshow('image',x_test[0])
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
-# In[52]:
-
-
 y_test[0]
-
-
-# In[65]:
 
 
 # Develop a sequential model using tensorflow keras
@@ -185,10 +119,6 @@ model = keras.Sequential([
     keras.layers.Dense(5, activation=tf.nn.softmax)
 ])
 
-
-# In[66]:
-
-
 # Compute the model parameters
 
 model.compile(optimizer=tf.train.AdamOptimizer(), 
@@ -196,7 +126,6 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 
-# In[67]:
 
 
 batch_size=128
