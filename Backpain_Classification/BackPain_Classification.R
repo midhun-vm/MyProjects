@@ -4,6 +4,7 @@ library(rpart)
 library(nnet)
 attach(dat)
 #
+
 str(dat)
 # checking for missing values
 dat[!complete.cases(dat),]
